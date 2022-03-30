@@ -37,19 +37,12 @@ if reponse.ok: #Response[200]
                 d = link.split('.svg')
 
                 link = d[0]
- 
             
             whole_link = ('https://fr.wikipedia.org/wiki/' + link)
 
             cur.execute('''INSERT INTO classement(pays, link) VALUES (?,?)''',(link, whole_link))
-
-            
-        
     for row in cur.execute('''SELECT id, pays, link FROM classement'''):
         print(row)
 
 cur.close()
-        
-
-
-        
+      
