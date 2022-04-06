@@ -6,7 +6,7 @@ conn = sqlite3.connect('database.sqlite')
 cur = conn.cursor()
 
 cur.execute ('''DROP TABLE IF EXISTS classement''')
-cur.execute('''CREATE TABLE classement (rang  INTEGER AUTOINCREMENT UNIQUE, country TEXT, link TEXT)''')
+cur.execute('''CREATE TABLE classement (rang  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, country TEXT, link TEXT)''')
 
 url = 'https://fr.wikipedia.org/wiki/Liste_des_pays_par_population'
 
